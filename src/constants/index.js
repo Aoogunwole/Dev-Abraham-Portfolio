@@ -138,9 +138,9 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "2025 - Present",
     points: [
-      "Built and maintained responsive web applications using React.js, improving product usability and delivering reliable user-facing experiences.",
-      "Investigated, reproduced, and resolved frontend issues reported during testing, helping improve product stability.",
-      "Collaborated with testers and technical teams to identify root causes,validate fixes, and deliver smoother, more reliable product experiences.",
+      "Developed and maintained enterprise web applications using React and JavaScript, delivering responsive, scalable interfaces that improved usability and enhanced the overall user experience.",
+      "Diagnosed and resolved complex frontend issues by reproducing bugs and identifying root causes, reducing recurring defects and increasing application stability.",
+      "Collaborated with testers and technical teams to identify root causes, validate fixes, and deliver smoother, more reliable product experiences.",
     ],
   },
   {
@@ -171,7 +171,7 @@ const experiences = [
     company_name: "Speak Africa",
     icon: SpeakAfrica,
     iconBg: "#E6DEDD",
-    date: "November 2023 - June 2024",
+    date: "2023 - 2024",
     points: [
       "Built responsive web interfaces with React.js, delivering user-friendly experiences across devices.",
       "Collaborated with team members to develop and refine web solutions, improving product functionality and usability.",
@@ -184,7 +184,7 @@ const experiences = [
     company_name: "Google Developers Student Club",
     icon: google,
     iconBg: "#E6DEDD",
-    date: "June 2022 - December 2023",
+    date: "2022 - 2023",
     points: [
       "Supported web development workshops and coding sessions, helping members build practical web development skills.",
       "Collaborated with the core team to organize technical learning activities and foster knowledge sharing within the community.",
