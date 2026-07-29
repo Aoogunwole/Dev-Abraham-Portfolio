@@ -316,7 +316,7 @@ const projects = [
 ];
 
 const resumeLink =
-  "https://drive.google.com/file/d/1MPfEKnBk5oaphACRwMbYwHdorFfX8zuL/view?usp=sharing";
+  "https://drive.google.com/file/d/1K_2run1Gfwu91JZNodwMSFRL4FP4Pwgd/view?usp=sharing";
 
 const contactInfo = {
   email: "ogunwoleabraham21@gmail.com",
