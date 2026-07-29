@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="devAbraham">
+  <defs>
+    <linearGradient id="brand-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#915EFF"/>
+      <stop offset="100%" stop-color="#bf61ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#050816"/>
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="7.25" fill="none" stroke="url(#brand-gradient)" stroke-width="1.5" opacity="0.85"/>
+  <text
+    x="16"
+    y="21.5"
+    text-anchor="middle"
+    font-family="Poppins, system-ui, -apple-system, sans-serif"
+    font-size="13"
+    font-weight="700"
+    letter-spacing="-0.5"
+  >
+    <tspan fill="#915EFF">d</tspan><tspan fill="#ffffff">A</tspan>
+  </text>
+</svg>
