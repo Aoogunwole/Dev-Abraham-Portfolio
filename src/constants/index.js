@@ -336,7 +336,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     handle: "Abraham Ogunwole",
-    link: "linkedin.com/in/abraham-ogunwole-58980a220",
+    link: "https://linkedin.com/in/abraham-ogunwole-58980a220",
     icon: "linkedin",
   },
   {
