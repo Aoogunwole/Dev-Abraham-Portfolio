@@ -44,7 +44,7 @@ export const navLinks = [
   },
   {
     id: "work",
-    title: "Work",
+    title: "Experience",
   },
   {
     id: "projects",
@@ -132,7 +132,7 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Frontend Software Developer",
+    title: "Software Developer",
     company_name: "Teknobuilt, India",
     icon: Teknobuilt,
     iconBg: "#E6DEDD",
@@ -150,7 +150,7 @@ const experiences = [
     iconBg: "#383E56",
     date: "Dec 2024 - Sept 2025",
     points: [
-      "Built and maintained dynamic, responsive web applications with React.js, which delivers reliable and user-friendly digital experiences",
+      "Built and maintained dynamic, responsive web applications with React.js, which delivers reliable and user-friendly digital experiences.",
       "Collaborated with technical teams to develop scalable frontend solutions, improving product functionality and overall usability.",
       "Resolved frontend issues through structured debugging.",
     ],
@@ -316,7 +316,7 @@ const projects = [
 ];
 
 const resumeLink =
-  "https://drive.google.com/file/d/1XDBKTVvfmgr4VXNX2hrNTR41iiJUYRdW/view?usp=sharing";
+  "https://drive.google.com/file/d/1xMm_XVFFSUy6z61RtEjLC5r_YgDpFOTo/view?usp=sharing";
 
 const contactInfo = {
   email: "ogunwoleabraham21@gmail.com",

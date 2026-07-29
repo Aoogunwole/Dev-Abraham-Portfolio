@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
@@ -9,18 +9,45 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const lastHashRef = useRef("");
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+    const updateUrlHash = (sectionId) => {
+      const newHash = sectionId ? `#${sectionId}` : "";
+      if (lastHashRef.current === newHash) return;
+
+      lastHashRef.current = newHash;
+      window.history.replaceState(
+        null,
+        "",
+        sectionId ? `#${sectionId}` : window.location.pathname
+      );
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const hero = document.getElementById("hero");
+      const heroOverlapsNavbar =
+        hero && hero.getBoundingClientRect().top < -5;
+
+      setScrolled(scrollTop > 0 || heroOverlapsNavbar);
+
+      const viewportOffset = 150;
+      let currentSection = "";
+
+      navLinks.forEach(({ id }) => {
+        const section = document.getElementById(id);
+        if (section && section.getBoundingClientRect().top <= viewportOffset) {
+          currentSection = id;
+        }
+      });
+
+      setActive(currentSection);
+      updateUrlHash(currentSection);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -29,7 +56,7 @@ const Navbar = () => {
     <nav
       className={`${
         styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
+      } w-full flex items-center py-5 fixed top-0 z-20 transition-colors duration-300 ${
         scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
@@ -39,6 +66,8 @@ const Navbar = () => {
           className='flex items-center gap-2'
           onClick={() => {
             setActive("");
+            lastHashRef.current = "";
+            window.history.replaceState(null, "", window.location.pathname);
             window.scrollTo(0, 0);
           }}
         >
@@ -55,9 +84,8 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(nav.title)}
+                active === nav.id ? "text-white" : "text-secondary"
+              } hover:text-white text-[18px] font-medium cursor-pointer transition-colors duration-200`}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
@@ -81,12 +109,11 @@ const Navbar = () => {
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
+                  className={`font-poppins font-medium cursor-pointer text-[16px] transition-colors duration-200 ${
+                    active === nav.id ? "text-white" : "text-secondary"
                   }`}
                   onClick={() => {
                     setToggle(!toggle);
-                    setActive(nav.title);
                   }}
                 >
                   <a href={`#${nav.id}`}>{nav.title}</a>
